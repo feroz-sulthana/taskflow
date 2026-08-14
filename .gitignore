@@ -1,0 +1,22 @@
+# React frontend
+frontend/node_modules/
+frontend/dist/
+frontend/build/
+
+# Maven backend
+backend/target/
+
+# Environment files
+.env
+.env.*
+
+# VS Code
+.vscode/
+
+# IntelliJ
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db

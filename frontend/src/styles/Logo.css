@@ -1,0 +1,85 @@
+/* Logo Container */
+
+.tf-logo-container{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    cursor:pointer;
+    user-select:none;
+}
+
+
+/* Logo Image */
+
+.tf-logo-img{
+    width:36px;
+    height:36px;
+    object-fit:contain;
+    transition:transform .3s ease;
+}
+
+.tf-logo-container:hover .tf-logo-img{
+    transform:scale(1.08) rotate(-5deg);
+}
+
+
+/* Logo Text */
+
+.tf-logo-text{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+
+/* Project Name */
+
+.tf-logo-text h2{
+    margin:0;
+    font-size:22px;
+    font-weight:700;
+    color:#ffffff;
+    line-height:1;
+    letter-spacing:.5px;
+}
+
+
+/* Tagline */
+
+.tf-logo-text p{
+    margin-top:2px;
+    font-size:10px;
+    color:#cbd5e1;
+    letter-spacing:1px;
+}
+
+
+/* Dark text version (for white backgrounds) */
+
+.tf-logo-text.dark h2{
+    color:#0f172a;
+}
+
+.tf-logo-text.dark p{
+    color:#64748b;
+}
+
+
+/* Responsive */
+
+@media (max-width:768px){
+
+    .tf-logo-img{
+        width:30px;
+        height:30px;
+    }
+
+    .tf-logo-text h2{
+        font-size:18px;
+    }
+
+    .tf-logo-text p{
+        display:none;
+    }
+
+}

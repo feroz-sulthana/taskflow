@@ -1,0 +1,1003 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", "Poppins", Arial, sans-serif;
+}
+
+/* =========================================
+   PAGE
+========================================= */
+
+.register-page {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            135deg,
+            #020617,
+            #0f172a,
+            #1e40af,
+            #312e81
+        );
+
+    background-size: 400% 400%;
+
+    animation: bgAnimation 12s ease infinite;
+
+    position: relative;
+}
+
+/* Background glow */
+
+.register-page::before {
+    content: "";
+
+    position: absolute;
+
+    width: 400px;
+    height: 400px;
+
+    background: rgba(59, 130, 246, 0.15);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    top: 10%;
+    left: 10%;
+
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+.register-page::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    background: rgba(124, 58, 237, 0.18);
+
+    filter: blur(100px);
+
+    border-radius: 50%;
+
+    bottom: 5%;
+    right: 10%;
+
+    animation: glowMove2 10s ease-in-out infinite alternate;
+}
+
+
+@keyframes bgAnimation {
+
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+
+}
+
+
+@keyframes glowMove {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(100px, 80px);
+    }
+
+}
+
+
+@keyframes glowMove2 {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(-100px, -60px);
+    }
+
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.register-navbar {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.15);
+
+    z-index: 100;
+
+    animation:
+        navbarAnimation 0.8s ease;
+}
+
+
+@keyframes navbarAnimation {
+
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* LOGO */
+
+.register-logo {
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: white;
+
+    letter-spacing: 1px;
+
+    text-shadow:
+        0 0 20px rgba(96, 165, 250, 0.8);
+}
+
+
+/* NAV LINKS */
+
+.register-nav-links {
+
+    display: flex;
+
+    gap: 35px;
+
+    align-items: center;
+}
+
+
+.register-nav-links a {
+
+    color: #e2e8f0;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+
+}
+
+
+.register-nav-links a:hover {
+
+    color: #60a5fa;
+
+    transform: translateY(-3px);
+
+}
+
+
+/* LOGIN BUTTON */
+
+.register-login-btn {
+
+    padding: 10px 28px;
+
+    border-radius: 30px;
+
+    color: white;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.4);
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    text-decoration: none;
+
+    transition: 0.4s;
+}
+
+
+.register-login-btn:hover {
+
+    background: #2563eb;
+
+    box-shadow:
+        0 0 25px rgba(37, 99, 235, 0.8);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.register-card {
+
+    width: 470px;
+
+    padding: 42px;
+
+    margin-top: 50px;
+
+    position: relative;
+
+    z-index: 10;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.05)
+        );
+
+    backdrop-filter: blur(25px);
+
+    -webkit-backdrop-filter: blur(25px);
+
+    border-radius: 28px;
+
+    border:
+        1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.5),
+        inset 0 1px 1px rgba(255, 255, 255, 0.15);
+
+    animation:
+        cardAnimation 0.8s ease;
+}
+
+
+@keyframes cardAnimation {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(50px)
+            scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.register-card h1 {
+
+    text-align: center;
+
+    color: white;
+
+    font-size: 34px;
+
+    margin-bottom: 35px;
+
+    font-weight: 800;
+
+    text-shadow:
+        0 0 20px rgba(96, 165, 250, 0.3);
+
+    animation:
+        titleAnimation 1s ease;
+}
+
+
+@keyframes titleAnimation {
+
+    from {
+
+        opacity: 0;
+
+        letter-spacing: 20px;
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        letter-spacing: 0;
+
+    }
+
+}
+
+
+/* =========================================
+   INPUT
+========================================= */
+
+.register-input-line {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 0 16px;
+
+    height: 55px;
+
+    margin-bottom: 22px;
+
+    border-radius: 16px;
+
+    background:
+        rgba(255, 255, 255, 0.08);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.20);
+
+    transition: 0.4s;
+
+    overflow: hidden;
+}
+
+
+/* Hover */
+
+.register-input-line:hover {
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border-color:
+        rgba(147, 197, 253, 0.4);
+}
+
+
+/* Focus */
+
+.register-input-line:focus-within {
+
+    border-color:
+        #60a5fa;
+
+    background:
+        rgba(30, 64, 175, 0.18);
+
+    box-shadow:
+        0 0 20px rgba(96, 165, 250, 0.35);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* ICON */
+
+.register-input-line span {
+
+    color: #93c5fd;
+
+    font-size: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 22px;
+
+    transition: 0.3s;
+}
+
+
+.register-input-line:focus-within span {
+
+    color: #60a5fa;
+
+    transform: scale(1.1);
+
+    text-shadow:
+        0 0 12px rgba(96, 165, 250, 0.8);
+}
+
+
+/* INPUT */
+
+.register-input-line input {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent !important;
+
+    color: #f8fafc;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    letter-spacing: 0.2px;
+
+    caret-color: #60a5fa;
+}
+
+
+/* Placeholder */
+
+.register-input-line input::placeholder {
+
+    color:
+        rgba(226, 232, 240, 0.5);
+
+    font-weight: 400;
+}
+
+
+/* =========================================
+   AUTOFILL FIX
+========================================= */
+
+/*
+   Chrome / Edge automatically make
+   autofilled inputs white.
+
+   This removes that white background.
+*/
+
+.register-input-line input:-webkit-autofill,
+.register-input-line input:-webkit-autofill:hover,
+.register-input-line input:-webkit-autofill:focus,
+.register-input-line input:-webkit-autofill:active {
+
+    -webkit-text-fill-color: #f8fafc !important;
+
+    -webkit-box-shadow:
+        0 0 0 1000px rgba(255, 255, 255, 0.08) inset !important;
+
+    box-shadow:
+        0 0 0 1000px rgba(255, 255, 255, 0.08) inset !important;
+
+    background-color:
+        transparent !important;
+
+    transition:
+        background-color 9999s ease-in-out 0s;
+}
+
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.register-submit {
+
+    width: 100%;
+
+    height: 52px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    cursor: pointer;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.45);
+
+    transition: 0.4s;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.register-submit:hover {
+
+    transform:
+        translateY(-4px)
+        scale(1.02);
+
+    box-shadow:
+        0 20px 40px rgba(124, 58, 237, 0.65);
+}
+
+
+.register-submit:active {
+
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+
+/* BUTTON SHINE */
+
+.register-submit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 0;
+
+    height: 0;
+
+    background:
+        rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    transition: 0.6s;
+}
+
+
+.register-submit:hover::before {
+
+    width: 450px;
+
+    height: 450px;
+}
+
+
+/* Button text stays above effect */
+
+.register-submit {
+
+    isolation: isolate;
+}
+
+
+.register-submit span {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   CUSTOM ALERT
+========================================= */
+
+.register-alert {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 13px 15px;
+
+    margin-bottom: 22px;
+
+    border-radius: 14px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    animation:
+        alertAnimation 0.4s ease;
+}
+
+
+@keyframes alertAnimation {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-12px)
+            scale(0.95);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* SUCCESS */
+
+.register-alert.success {
+
+    background:
+        rgba(34, 197, 94, 0.14);
+
+    border:
+        1px solid rgba(74, 222, 128, 0.4);
+
+    color: #bbf7d0;
+
+    box-shadow:
+        0 0 20px rgba(34, 197, 94, 0.15);
+}
+
+
+/* ERROR */
+
+.register-alert.error {
+
+    background:
+        rgba(239, 68, 68, 0.14);
+
+    border:
+        1px solid rgba(248, 113, 113, 0.4);
+
+    color: #fecaca;
+
+    box-shadow:
+        0 0 20px rgba(239, 68, 68, 0.15);
+}
+
+
+/* ALERT ICON */
+
+.alert-icon {
+
+    width: 28px;
+
+    height: 28px;
+
+    min-width: 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 15px;
+
+    font-weight: 800;
+}
+
+
+.register-alert.success .alert-icon {
+
+    background:
+        rgba(34, 197, 94, 0.25);
+
+    color:
+        #4ade80;
+}
+
+
+.register-alert.error .alert-icon {
+
+    background:
+        rgba(239, 68, 68, 0.25);
+
+    color:
+        #f87171;
+}
+
+
+/* ALERT CLOSE */
+
+.register-alert button {
+
+    margin-left: auto;
+
+    border: none;
+
+    background: transparent;
+
+    color: inherit;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    opacity: 0.7;
+
+    transition: 0.3s;
+}
+
+
+.register-alert button:hover {
+
+    opacity: 1;
+
+    transform:
+        rotate(90deg)
+        scale(1.1);
+}
+
+
+/* =========================================
+   LOGIN TEXT
+========================================= */
+
+.register-login-text {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #e2e8f0;
+
+    font-size: 16px;
+}
+
+
+.register-login-text a {
+
+    color: #60a5fa;
+
+    font-weight: bold;
+
+    margin-left: 5px;
+
+    text-decoration: underline;
+
+    transition: 0.3s;
+}
+
+
+.register-login-text a:hover {
+
+    color: white;
+
+    text-shadow:
+        0 0 15px #60a5fa;
+}
+
+
+/* =========================================
+   CLOSE BUTTON
+========================================= */
+
+.register-close-btn {
+
+    position: absolute;
+
+    right: 18px;
+
+    top: 18px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background:
+        rgba(239, 68, 68, 0.9);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: 0.4s;
+
+    z-index: 20;
+}
+
+
+.register-close-btn:hover {
+
+    transform:
+        rotate(180deg)
+        scale(1.1);
+
+    box-shadow:
+        0 0 20px rgba(239, 68, 68, 0.8);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .register-page {
+
+        padding: 20px;
+
+        overflow-y: auto;
+    }
+
+
+    .register-card {
+
+        width: 100%;
+
+        max-width: 420px;
+
+        padding: 30px 24px;
+
+        margin-top: 70px;
+
+        border-radius: 22px;
+    }
+
+
+    .register-card h1 {
+
+        font-size: 28px;
+
+        margin-bottom: 28px;
+    }
+
+
+    .register-nav-links {
+
+        display: none;
+    }
+
+
+    .register-navbar {
+
+        padding: 0 20px;
+
+        height: 65px;
+    }
+
+
+    .register-logo {
+
+        font-size: 24px;
+    }
+
+
+    .register-input-line {
+
+        height: 52px;
+
+        margin-bottom: 18px;
+    }
+
+
+    .register-submit {
+
+        height: 50px;
+    }
+
+
+    .register-login-text {
+
+        font-size: 14px;
+    }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+
+    .register-card {
+
+        padding: 25px 18px;
+    }
+
+
+    .register-card h1 {
+
+        font-size: 25px;
+    }
+
+
+    .register-input-line {
+
+        padding: 0 12px;
+    }
+
+
+    .register-input-line input {
+
+        font-size: 14px;
+    }
+
+}
