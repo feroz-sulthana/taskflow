@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "../styles/Register.css";
-import Logo from "../Components/Logo";
+
 
 function Register() {
   const [user, setUser] = useState({
