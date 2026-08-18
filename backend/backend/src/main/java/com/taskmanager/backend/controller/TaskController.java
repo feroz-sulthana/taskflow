@@ -12,7 +12,7 @@ import com.taskmanager.backend.repository.TaskRepository;
 
 @RestController
 @RequestMapping("/tasks")
-@CrossOrigin(origins = {"http://localhost:5173", "https://taskflow-13.onrender.com"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://taskflow-15.onrender.com"})
 public class TaskController {
 
 
