@@ -34,7 +34,7 @@ function Tasks() {
   // GET ALL TASKS
 
   useEffect(() => {
-    fetch("http://localhost:8080/tasks")
+    fetch("https://taskflow-11.onrender.com/tasks")
       .then((res) => res.json())
       .then((data) => setTasks(data))
       .catch((err) => console.log(err));
@@ -53,12 +53,12 @@ function Tasks() {
   // CREATE + UPDATE
 
   const saveTask = async () => {
-    let url = "http://localhost:8080/tasks";
+    let url = "https://taskflow-11.onrender.com/tasks";
 
     let method = "POST";
 
     if (editId) {
-      url = `http://localhost:8080/tasks/${editId}`;
+      url = `https://taskflow-11.onrender.com/tasks/${editId}`;
 
       method = "PUT";
     }
@@ -88,7 +88,7 @@ function Tasks() {
 
   const deleteTask = async (id) => {
     await fetch(
-      `http://localhost:8080/tasks/${id}`,
+      `https://taskflow-11.onrender.com/tasks/${id}`,
 
       {
         method: "DELETE",
