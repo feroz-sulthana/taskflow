@@ -37,7 +37,7 @@ function Register() {
 
     try {
       const response = await fetch(
-        "https://taskflow-11.onrender.com/register",
+        "https://taskflow-11.onrender.com/api/users/register",
         {
           method: "POST",
 
