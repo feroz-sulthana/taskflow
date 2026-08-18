@@ -1,4 +1,3 @@
-
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./Pages/LandingPage";
 import Login from "./Pages/Login";
@@ -7,29 +6,17 @@ import Dashboard from "./Pages/Dashboard";
 import Task from "./Pages/Task";
 import Logo from "./Components/Logo";
 
-
-
-
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/landingpage" element={<LandingPage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-         <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/task" element={<Task />} />
-          <Route path="/logo" element={<Logo />} />
-          
-          
-         
-          
-          
-
-
-
-        
-
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/task" element={<Task />} />
+        <Route path="/logo" element={<Logo />} />
       </Routes>
     </BrowserRouter>
   );
