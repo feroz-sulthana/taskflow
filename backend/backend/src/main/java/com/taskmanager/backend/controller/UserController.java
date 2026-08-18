@@ -9,7 +9,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = {"http://localhost:5173", "https://taskflow-13.onrender.com"})
+@CrossOrigin(origins = {"http://localhost:5173", "https://taskflow-15.onrender.com"})
 public class UserController {
 
     private final UserService userService;
